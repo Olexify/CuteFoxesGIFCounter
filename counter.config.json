@@ -1,0 +1,26 @@
+{
+  "counterKey": "counter:Olexify",
+  "digits": 7,
+  "assetsDir": "FoxgirlsPack",
+  "style": {
+    "opacity": 0.8,
+    "brightness": 0.9,
+    "contrast": 1.25,
+    "saturate": 1,
+    "scale": 1,
+    "spacing": 0,
+    "offsetY": 0,
+    "shadowOpacity": 0.58,
+    "shadowBlur": 0.7,
+    "shadowOffsetX": 2.5,
+    "shadowOffsetY": 3.5,
+    "bgOpacity": 0,
+    "rounded": 0,
+    "bgColor": "#000000"
+  },
+  "counting": {
+    "mode": "strict",
+    "cooldownSeconds": 0,
+    "bump": 1
+  }
+}
