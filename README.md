@@ -49,6 +49,7 @@ You host it on Vercel, keep the count in Upstash Redis, and change everything fr
 ## 🧩 Features
 
 * 🦊 Ten pixel-art digit GIFs (0–9) stored right in the repo, in `FoxgirlsPack/`, each with its own animation
+* 🕰️ Four timing variants per digit (`3.gif`, `3_1.gif`, `3_2.gif`, `3_3.gif`: different loop start and speed), so neighbouring digits, like a row of zeros, never blink in unison
 * 🧸 Placeholder fox digits are drawn if a sprite is missing, so it works from the first deploy
 * ⚙️ Everything configurable in `counter.config.json`
 * 🎨 Opacity, brightness, contrast, saturation, shadow, scale, spacing
@@ -105,7 +106,7 @@ CuteFoxesGIFCounter/
 ## 🚀 Setup
 
 ### 1) Add your digit art 🎨
-Put 10 files named `0.gif` … `9.gif` into `FoxgirlsPack/`. The aspect ratio must be **45:100** (the bundled set is **68×151**), with a transparent background. Keep each under about 65 KB: the counter embeds every digit into one SVG, so 7 digits is roughly 0.5 MB.
+Put 10 files named `0.gif` … `9.gif` into `FoxgirlsPack/`. The aspect ratio must be **45:100** (the bundled set is **68×151**), with a transparent background. Optionally add timing variants named `<digit>_1.gif` … `<digit>_3.gif` and set `"variants"` in `counter.config.json`; position *i* then uses variant *i* mod *variants*. Keep each under about 65 KB: the counter embeds every digit into one SVG, so 7 digits is roughly 0.5 MB.
 
 ### 2) Upstash Redis 🗄️
 Open your database in the [Upstash console](https://console.upstash.com). Under **REST API**, copy these two values:

@@ -15,6 +15,7 @@ const DEFAULTS = {
   counterKey: 'counter:Olexify',
   digits: 7,
   assetsDir: 'FoxgirlsPack',
+  variants: 1, // timing variants per digit: <d>.gif, <d>_1.gif, ... position i uses variant i % variants, so neighbours never animate in unison
   style: {
     opacity: 1,
     brightness: 1,
@@ -91,18 +92,22 @@ async function getCount(req, cfg) {
   return await redis.incr(key);
 }
 
-function loadDigit(dir, d) {
-  const cacheKey = `${dir}/${d}`;
+function loadDigit(dir, d, v = 0) {
+  const cacheKey = `${dir}/${d}/${v}`;
   if (digitCache.has(cacheKey)) return digitCache.get(cacheKey);
 
   let href = null;
-  for (const ext of ['gif', 'webp', 'png']) {
-    const file = join(process.cwd(), dir, `${d}.${ext}`);
-    if (existsSync(file)) {
-      const mime = ext === 'gif' ? 'image/gif' : `image/${ext}`;
-      href = `data:${mime};base64,${readFileSync(file).toString('base64')}`;
-      break;
+  // variant file first (e.g. 3_2.gif), then the plain digit file as a fallback
+  for (const name of v > 0 ? [`${d}_${v}`, `${d}`] : [`${d}`]) {
+    for (const ext of ['gif', 'webp', 'png']) {
+      const file = join(process.cwd(), dir, `${name}.${ext}`);
+      if (existsSync(file)) {
+        const mime = ext === 'gif' ? 'image/gif' : `image/${ext}`;
+        href = `data:${mime};base64,${readFileSync(file).toString('base64')}`;
+        break;
+      }
     }
+    if (href) break;
   }
   digitCache.set(cacheKey, href);
   return href;
@@ -166,7 +171,7 @@ export default async function handler(req, res) {
     const y = Math.max(0, offsetY);
     const images = chars.map((d, i) => {
       const x = i * (W + spacing);
-      const href = loadDigit(cfg.assetsDir, d);
+      const href = loadDigit(cfg.assetsDir, d, i % Math.max(1, Math.round(num(cfg.variants, 1))));
       const body = href
         ? `<image x="${x}" y="${y}" width="${W}" height="${H}" href="${href}" filter="url(#fox-filter)" />`
         : placeholderDigit(d, x, y, W, H);

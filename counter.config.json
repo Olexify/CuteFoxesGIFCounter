@@ -22,5 +22,6 @@
     "mode": "strict",
     "cooldownSeconds": 0,
     "bump": 1
-  }
+  },
+  "variants": 4
 }
