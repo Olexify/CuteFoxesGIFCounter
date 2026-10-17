@@ -6,10 +6,19 @@
 </p>
 
 <p align="center">
-  <img src="https://cutefoxesgifcounter.vercel.app/api/counter" width="425" alt="Cute Foxes GIF Counter" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/0.gif" width="68" alt="0" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/1.gif" width="68" alt="1" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/2.gif" width="68" alt="2" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/3.gif" width="68" alt="3" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/4.gif" width="68" alt="4" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/5.gif" width="68" alt="5" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/6.gif" width="68" alt="6" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/7.gif" width="68" alt="7" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/8.gif" width="68" alt="8" />
+  <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/9.gif" width="68" alt="9" />
 </p>
 <p align="center">
-  <sub>Live counter powered by Vercel + Upstash Redis</sub>
+  <sub>The ten animated digits, each with its own little animation</sub>
 </p>
 
 ---
@@ -32,13 +41,30 @@ You host it on Vercel, keep the count in Upstash Redis, and change everything fr
 
 ## 🧩 Features
 
-* 🦊 Animated digit sprites (0–9) stored right in the repo, in `FoxgirlsPack/`
+* 🦊 Ten pixel-art digit GIFs (0–9) stored right in the repo, in `FoxgirlsPack/`, each with its own animation
 * 🧸 Placeholder fox digits are drawn if a sprite is missing, so it works from the first deploy
 * ⚙️ Everything configurable in `counter.config.json`
 * 🎨 Opacity, brightness, contrast, saturation, shadow, scale, spacing
 * 📈 Counting modes: `strict`, `unique`, `aggressive`
 * ☁️ Runs on the Vercel and Upstash free tiers
 * 🔒 No third-party tracking
+
+---
+
+## 🎞️ The animations
+
+| Digit | What she does |
+|---|---|
+| 0 | blinks, flicks her ears, sways her tail |
+| 1 | light glint across the sign, ear perk, happy tail wag |
+| 2 | the number glows, stars twinkle, hair swish |
+| 3 | hearts float up, petals drift, ears relax, long happy blink |
+| 4 | fireflies, hair shine, sign sparkles, ears twitch in turn, tail-tip flick |
+| 5 | a gust: petals blow across, hair/tail/ears sway, the number drifts to pink |
+| 6 | humming: music notes, beat-synced ears and tail, the number hops |
+| 7 | confetti pop, the number flashes gold, ears perk |
+| 8 | a sparkle traces an infinity sign, bubbles float up |
+| 9 | nine fox-fire flames orbit her, a crescent moon glows |
 
 ---
 
@@ -72,7 +98,7 @@ CuteFoxesGIFCounter/
 ## 🚀 Setup
 
 ### 1) Add your digit art 🎨
-Put 10 files named `0.gif` … `9.gif` into `FoxgirlsPack/`. Recommended size is **90×200** (a 45:100 ratio), with a transparent background, under 50 KB each.
+Put 10 files named `0.gif` … `9.gif` into `FoxgirlsPack/`. The aspect ratio must be **45:100** (the bundled set is **68×151**), with a transparent background. Keep each under about 65 KB: the counter embeds every digit into one SVG, so 7 digits is roughly 0.5 MB.
 
 ### 2) Upstash Redis 🗄️
 Open your database in the [Upstash console](https://console.upstash.com). Under **REST API**, copy these two values:
