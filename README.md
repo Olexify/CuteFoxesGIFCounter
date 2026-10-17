@@ -6,13 +6,6 @@
 </p>
 
 <p align="center">
-  <img src="https://cutefoxesgifcounter.vercel.app/api/counter" width="425" alt="Cute Foxes GIF Counter" />
-</p>
-<p align="center">
-  <sub>Live counter powered by Vercel + Upstash Redis</sub>
-</p>
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/0.gif" width="68" alt="0" />
   <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/1.gif" width="68" alt="1" />
   <img src="https://raw.githubusercontent.com/Olexify/CuteFoxesGIFCounter/main/FoxgirlsPack/2.gif" width="68" alt="2" />
@@ -169,4 +162,11 @@ Open `https://<your-project>.vercel.app/api/counter`. The site root `/` returnin
 
 <p align="center">
   <i>"Every visitor gets a tail wag. That's the rule." 🦊✨</i>
+</p>
+
+<p align="center">
+  <img src="https://cutefoxesgifcounter.vercel.app/api/counter" width="425" alt="Cute Foxes GIF Counter" />
+</p>
+<p align="center">
+  <sub>Live counter powered by Vercel + Upstash Redis</sub>
 </p>
