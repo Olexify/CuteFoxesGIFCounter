@@ -73,7 +73,8 @@ function getClientIp(req) {
 }
 
 async function getCount(req, cfg) {
-  const key = cfg.counterKey;
+  // ?id=name: a separate count, only for names listed in the config (nobody can fill the database with new keys)
+  const key = cfg.extraCounters?.includes(req.query?.id) ? `counter:${req.query.id}` : cfg.counterKey;
   const { mode, cooldownSeconds, bump } = cfg.counting;
 
   if (mode === 'unique') {

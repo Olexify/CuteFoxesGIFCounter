@@ -1,6 +1,7 @@
 {
   "counterKey": "counter:Olexify",
   "digits": 7,
+  "extraCounters": ["fennekos"],
   "assetsDir": "FoxgirlsPack",
   "style": {
     "opacity": 0.8,
